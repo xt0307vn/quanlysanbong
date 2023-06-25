@@ -1,0 +1,160 @@
+.accountcreate__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.title__box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    .title {
+        color: #edf1d6;
+        background-color: #609966;
+        padding: 2px 20px;
+        border-radius: 0 8px 8px 0;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.form-row {
+    display: flex;
+    width: 100%;
+}
+
+
+.form-row-item {
+
+    > div {
+        display: flex;
+        width: 100%;
+        border-radius: 8px;
+        color: gray;
+        font-size: 16px;
+        border: 1px solid gray;
+        input {
+            border: none;
+            background-color: transparent;
+            width: 90%;
+        }
+
+        button{
+            background-color: transparent;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+.form-label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    color: gray;
+}
+
+.img-avatar {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.form-input {
+    display: block;
+    height: 2rem;
+    width: 100%;
+    padding: 1.2rem 1rem;
+    color: gray;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    color: black;
+}
+
+.form-select {
+    padding: 0.6rem 1rem;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.personal-image {
+    text-align: center;
+    margin: 0 0 15px 25px;
+    max-width: 120px;
+}
+
+.personal-image input[type="file"] {
+    display: none;
+}
+
+.personal-figure {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+.personal-avatar {
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out 0.3s;
+}
+
+.personal-avatar:hover {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.personal-figcaption {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    border-radius: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all ease-in-out 0.3s;
+}
+
+.personal-figcaption:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.personal-figcaption > img {
+    width: 50px;
+    height: 50px;
+}
+
+.btn__box {
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+.btn {
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 25px;
+}
+
+.btn--add {
+    background-color: #609966;
+}
+
+.btn--cancle {
+    background-color: #c86a6a;
+}

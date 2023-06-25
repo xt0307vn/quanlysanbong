@@ -1,0 +1,135 @@
+* {
+    font-size: 19px;
+}
+
+.profile__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 19px;
+}
+
+.title__box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+
+    .title {
+        color: #edf1d6;
+        background-color: #609966;
+        cursor: pointer;
+        padding: 2px 20px;
+        border-radius: 0 8px 8px 0;
+    }
+}
+
+.profile__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 100%;
+    flex: 1;
+}
+
+.avatar__box {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 300px;
+    .avatar {
+        margin-top: 40px;
+        width: 170px;
+        height: 170px;
+    }
+}
+
+.profile__box--top {
+    display: flex;
+}
+
+.profile__items--top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+
+    .profile__item:first-child {
+        display: flex;
+        gap: 30px;
+        color: #000000;
+        margin-bottom: 10px;
+        h2 {
+            font-size: 25px;
+        }
+    }
+}
+
+.profile__items--bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 30px 0;
+
+    .profile__item:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0 20px;
+    }
+
+    .profile__item {
+        display: flex;
+        gap: 0 20px;
+    }
+}
+
+.profile__item--infomation {
+    display: flex;
+    gap: 0 30px;
+}
+
+.item__infomation {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+}
+
+.action {
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    display: flex;
+    gap: 0 20px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.btn__cancel {
+    background-color: red;
+}
+
+.btn__update {
+    background-color: #609966;
+}
+
+.password__box {
+    display: flex;
+    gap: 0 40px;
+    align-items: center;
+}
+
+.password__box h4 {
+    padding-left: 20px;
+    width: 200px;
+}
+
+.password__box p {
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,60 @@
+.menu__box {
+    display: flex;
+    margin: 40px 0 30px 0;
+    justify-content: space-between;
+    align-content: center;
+    
+    
+}
+
+.menu {
+    display: flex;
+    gap: 10px 30px;
+    justify-content: right;
+    align-items: center;
+}
+
+
+.menu__item {
+    position: relative;
+    list-style-type: none;
+    font-weight: 500;  
+    font-size: var(--size-base);  
+}
+
+.search__box {
+    background-color: #e4e4e497;
+    width: 40%;
+    border-radius: 18px;
+    padding: 0 10px;
+}
+
+.search__box input{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 5px ;
+    width: calc(100% - 50px);
+    margin-left: 15px;
+    font-size: var(--size-base);
+}
+
+.account__menu {
+    width: 200px;
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    background-color: #e4e4e4;
+    text-align: right;
+    z-index: 2;
+    display: none;
+    border-radius: 8px;
+
+    li {
+        cursor: pointer;
+    }
+}
+
+.menu__item:last-child:hover .account__menu {
+    display: block;
+}

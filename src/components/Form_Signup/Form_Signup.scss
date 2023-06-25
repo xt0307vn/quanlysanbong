@@ -1,0 +1,60 @@
+.d-flex{
+    display: flex;
+}
+
+.signup h1{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+.input_signup form{
+    color: white;
+    background-color: rgb(252, 252, 252);
+    font-size: 15px;
+    /* width: 60%; */
+    height: auto;
+    padding-left: 20px;  
+    margin-left: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-radius:100px solid rgb(227, 227, 227);
+}
+
+.input_signup input{
+    color: rgb(135, 135, 135);
+    font-size: 10px;
+    height: 40px;
+    width: 400px;
+    margin: 10px 10px;
+    font-size: 10px;
+    display: block;
+    border-radius:100px solid rgb(227, 227, 227);
+}
+.input_signup button{
+    margin-bottom: 10px;
+    background-color: rgb(23, 196, 28);
+    width: 180px;
+    height: 40px;
+    color: white;
+    margin-left: 200px;
+}
+
+.input_signup h3{
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: rgb(23, 196, 28);
+    color: white;
+    margin-bottom: 10px;
+}
+.input_signup h5{
+    color: black;
+    font-size: 10px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+h1{
+    margin-bottom: -20px;
+}

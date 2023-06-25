@@ -1,0 +1,24 @@
+.history__box {
+    background-color: #EDF1D6;
+    border-radius: 11px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 4px 10px 0 #EDF1D6;
+
+    .left__box {
+    }
+
+    .right__box {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        justify-content: space-between;
+
+        h4 {
+            color: #609966;
+            font-size: 25px;
+        }
+    }
+}
+

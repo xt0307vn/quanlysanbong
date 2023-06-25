@@ -1,0 +1,33 @@
+.notify__wrapper {
+    position: absolute;
+    width: 30%;
+    height: 80px;
+    top: 0;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #609966;
+    animation: show .21s 1 ease-out;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px 0 #609966;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@keyframes show {
+    from {
+        top: 0;
+        margin: 0;
+    }
+
+    to {
+        margin-top: 50px;
+    }
+}

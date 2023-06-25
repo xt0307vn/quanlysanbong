@@ -1,0 +1,52 @@
+.overview__box {
+    max-height: 230px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image__box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.image__box::before {
+    content: "";
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(#00000000, #000000);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 0 0 18px 18px;
+}
+
+.overview__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    object-fit: fill;
+    position: relative;
+}
+
+
+.overview__info {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 10px;
+    color:#fff;
+    z-index: 10;
+
+    
+}
+
+.address {
+    width: calc(100% - 50px);
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,135 @@
+.wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup__wrapper {
+    width: 75vw;
+    height: 90vh;
+    box-shadow: 0 5px 15px 0 #888888;
+}
+
+.signup__title {
+    margin-top: 20px;
+    margin-left: 90px;
+    color: #609966;
+}
+
+.info__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    padding: 30px 40px;
+    justify-items: center;
+}
+
+.info__item {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 80%;
+    font-size: 20px;
+
+    > input {
+        border: 1px #000 solid;
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    input[type="checkbox"] {
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        font: inherit;
+        width: 1.15em;
+        height: 1.15em;
+    }
+
+    input[type="file"] {
+        border: none;
+        display: none;
+    }
+
+    label {
+        background-color: #609966;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+}
+
+.info__item:nth-child(2) {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 80%;
+    font-size: 20px;
+
+    div {
+        border: 1px #000 solid;
+
+        font-size: 16px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+
+        input {
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 5px;
+            width: 85%;
+            height: 100%;
+        }
+
+        button {
+            background-color: transparent;
+            font-size: 16px;
+            flex-grow: 1;
+            font-weight: 600;
+        }
+    }
+}
+
+.signup__action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    .btn--signup {
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        width: 20%;
+        background-color: #609966;
+        font-weight: bold;
+        color: #fff;
+    }
+    .request__box {
+        position: absolute;
+        top: 0;
+        left: 91px;
+    }
+}
+
+.dob__box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    select {
+        padding: 3px 5px;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: #88888852;
+    }
+}

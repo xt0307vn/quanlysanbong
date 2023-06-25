@@ -1,0 +1,34 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.title {
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 600;
+    }
+}
+
+.regul__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, max-content);
+    gap: 20px;
+    height: 100%;
+
+    .regul__item {
+        width: 100%;
+        background-color: #9dc08b;
+        padding: 20px;
+        border-radius: 11px;
+        box-shadow: 0 3px 15px 0 #9dc08b;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+    }
+}

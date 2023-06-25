@@ -1,0 +1,18 @@
+:root {
+    --size-base: 1em;
+    --size-sm: calc(var(var(--size-base)) * 0.875);
+    --main-color: #609966;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+}

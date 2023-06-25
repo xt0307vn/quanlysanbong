@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    background-color: green($color: #000000);
+    gap: 20px;
+    button {
+        background-color: #EDF1D6;
+        padding: 5px 15px;
+        border-radius: 6px;
+    }
+
+    .active {
+        background-color: #609966;
+    }
+}

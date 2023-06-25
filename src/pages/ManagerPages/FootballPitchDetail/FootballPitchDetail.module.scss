@@ -1,0 +1,130 @@
+* {
+    outline: none;
+    border: none;
+}
+
+.pitch__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title__box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.title {
+    color: #EDF1D6;
+    background-color: #609966;
+    padding: 2px 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+
+.pitch__content {
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    flex-grow: 100%;
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.content--top {
+    display: flex;
+    
+}
+.pitchimages__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.pitch__image {
+    width: 90%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.pitchinfo__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.info_itemm {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+
+}
+
+.pitches__box, .interval__box {
+    height: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow: scroll;
+    background-color: #efefef6b;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.pitches__box::-webkit-scrollbar-thumb, 
+.interval__box::-webkit-scrollbar-thumb, 
+.description::-webkit-scrollbar-thumb {
+    border-radius: 100rem;
+    background-color: #C1C1C1;
+}
+
+.pitches__box::-webkit-scrollbar, 
+.interval__box::-webkit-scrollbar, 
+.description::-webkit-scrollbar {
+    width: 4px;
+}
+
+
+.content--bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.description {
+    max-height: 90px;
+    overflow-y: scroll;
+    text-align: justify;
+}
+
+.booking__wrapper {
+    position: relative;
+    display: flex;
+}
+
+.booking__box {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 50px;
+    align-items: flex-end;
+}
+
+.btn__booking {
+    padding: 10px 30px;
+    background-color: #609966;
+    border-radius: 11px;
+    
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2em;
+}

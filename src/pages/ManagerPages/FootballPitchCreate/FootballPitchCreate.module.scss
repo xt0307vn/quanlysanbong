@@ -1,0 +1,265 @@
+* {
+    outline: none;
+    border: none;
+}
+
+.pitch__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title__box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.title {
+    color: #edf1d6;
+    background-color: #609966;
+    padding: 2px 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.pitch__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 100%;
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.content--top {
+    display: flex;
+}
+.pitchimages__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.pitchimages__top {
+    width: 90%;
+    height: 150px;
+    position: relative;
+}
+
+.pitch__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.upload__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    opacity: 0.7;
+    border-radius: 18px 0 18px 0;
+}
+
+.pitchinfo__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.info_itemm {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+
+.info_itemm:first-child input {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footballpitch--name {
+    border-bottom: 2px #808080 solid;
+}
+
+.profile__item--infomation {
+    display: flex;
+    gap: 0 5px;
+    flex-wrap: wrap;
+}
+.item__select {
+    position: relative;
+    max-width: 130px;
+    min-width: 120;
+    display: flex;
+    justify-content: center;
+}
+
+.item__select select {
+    -webkit-appearance: none;
+    padding: 7px 40px 7px 12px;
+    width: 100%;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 150ms ease;
+}
+
+.item__select svg {
+    position: absolute;
+    right: 12px;
+    top: calc(50% - 3px);
+    width: 10px;
+    height: 6px;
+    stroke-width: 2px;
+    stroke: #000000;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+.item__select:required:invalid {
+    color: #5a667f;
+}
+
+.item__select option {
+    color: #223254;
+}
+
+.sprites {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.item__infomation {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+}
+
+.item__input {
+    flex-grow: 1;
+}
+
+.item__input input {
+    width: 100%;
+    border-bottom: 1px #4d4d4d solid;
+    padding: 4px 5px 1px 5px;
+}
+
+.pitches__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+
+.add__box {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    gap: 0 20px;
+}
+
+.btn__addpitch {
+    font-size: 15px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    background-color: #609966;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn__editpitch {
+    font-size: 15px;
+    padding: 0 15px;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.pitches__box,
+.interval__box {
+    height: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow: scroll;
+    background-color: #efefef6b;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.pitches__box::-webkit-scrollbar-thumb,
+.interval__box::-webkit-scrollbar-thumb,
+.description--content::-webkit-scrollbar-thumb {
+    border-radius: 100rem;
+    background-color: #c1c1c1;
+}
+
+.pitches__box::-webkit-scrollbar,
+.interval__box::-webkit-scrollbar,
+.description--content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.content--bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.description {
+    max-height: 90px;
+    width: 100%;
+    text-align: justify;
+}
+
+.description--content {
+    width: 100%;
+    height: 100px;
+    background-color: #efefef;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.booking__wrapper {
+    position: relative;
+    display: flex;
+}
+
+.booking__box {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 50px;
+    align-items: flex-end;
+}
+
+.btn__booking {
+    padding: 10px 30px;
+    background-color: #609966;
+    border-radius: 11px;
+
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2em;
+}

@@ -1,0 +1,11 @@
+.pitch__box {
+    border-radius: 8px;
+    padding: 1px 5px;
+    text-align: center;
+    border: 1px black solid;
+}
+
+.pitch__box:hover {
+    background-color: #60996682;
+    cursor: pointer;
+}

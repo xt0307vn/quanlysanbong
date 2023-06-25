@@ -1,0 +1,13 @@
+.pitches__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pitchoverview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}

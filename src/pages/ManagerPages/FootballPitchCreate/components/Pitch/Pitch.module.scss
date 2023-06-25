@@ -1,0 +1,26 @@
+.pitch__box {
+    border-radius: 8px;
+    padding: 1px 5px;
+    text-align: center;
+    border: 1px black solid;
+    height: fit-content;
+}
+
+.pitch__box:hover {
+    background-color: #60996682;
+    cursor: pointer;
+}
+
+.inactive {
+    background-color: red;
+    color: #fff;
+}
+
+.active {
+    background-color: #609966;
+} 
+
+.inactive:hover {
+    background-color: red;
+    user-select: none;
+}
