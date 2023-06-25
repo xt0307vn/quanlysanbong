@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
     faArrowRightArrowLeft,
     faArrowLeftLong,
@@ -21,19 +21,33 @@ import apis from "../../../common/apis";
 
 const cx = classNames.bind(styles);
 const FootballPitchCreate = () => {
+
     const dispatch = useDispatch();
-    const data = useSelector((state) => state.manager);
+    const dataFootballPitch = useSelector((state) => state.manager);
     const navigate = useNavigate();
     const [footballPitch, setFootballPitch] = useState({
-        tensanbong: "",
-        id_xaphuong: null,
+        tensanbong:
+            dataFootballPitch.footballName != ""
+                ? dataFootballPitch.footballName
+                : "",
+        id_xaphuong: dataFootballPitch.idWard ? dataFootballPitch.idWard : null,
+        id_quanhuyen: dataFootballPitch.idDistrict
+            ? dataFootballPitch.idDistrict
+            : null,
+        id_tinhthanh: dataFootballPitch.idProvince
+            ? dataFootballPitch.idProvince
+            : null,
         id_trangthai_sanbong: 1,
         id_taikhoan: 1,
         thoigiandong: "",
         thoigianmo: "",
         hinhanh: "",
-        gioithieu: "",
-        diachicuthe: "",
+        gioithieu: dataFootballPitch.description
+            ? dataFootballPitch.description
+            : "",
+        diachicuthe: dataFootballPitch.addressDetail
+            ? dataFootballPitch.addressDetail
+            : "",
     });
     const [provinces, setProvinces] = useState([]);
     const [districts, setDistricts] = useState([]);
@@ -55,12 +69,28 @@ const FootballPitchCreate = () => {
     }
 
     useEffect(() => {
-        apis.getProvince().then((data) => setProvinces(data));
+        dataFootballPitch.idWard
+            ? apis.getProvince().then((data) => {
+                  setProvinces(data);
+                  apis.getDistrict(dataFootballPitch.idProvince).then(
+                      (data) => {
+                          setDistricts(data);
+                          apis.getWard(dataFootballPitch.idDistrict).then(
+                              (data) => {
+                                  setWards(data);
+                              }
+                          );
+                      }
+                  );
+              })
+            : apis.getProvince().then((data) => {
+                  setProvinces(data);
+              });
     }, []);
 
     return (
         <div className={cx("pitch__wrapper")}>
-            <div className={cx("title__box")}>
+            <div className={cx("title__box")} onClick={() => navigate(-1)}>
                 <FontAwesomeIcon icon={faCaretLeft} size="2x" />
                 <h3 className={cx("title")}>Tạo sân bóng</h3>
             </div>
@@ -98,6 +128,7 @@ const FootballPitchCreate = () => {
                                 className={cx("footballpitch--name")}
                                 type="text"
                                 placeholder="Nhập tên sân bóng"
+                                value={footballPitch.tensanbong || ""}
                                 onChange={handleInput}
                                 name="tensanbong"
                             />
@@ -107,9 +138,12 @@ const FootballPitchCreate = () => {
                             <div className={cx("profile__item--infomation")}>
                                 <div className={cx("item__select")}>
                                     <select
-                                        required
-                                        defaultValue="0"
-                                        onChange={handleChangeProvince}
+                                        onChange={(e) => {
+                                            handleInput(e);
+                                            handleChangeProvince(e);
+                                        }}
+                                        name="id_tinhthanh"
+                                        value={footballPitch.id_tinhthanh || 0}
                                     >
                                         <option disabled value="0">
                                             Chọn tỉnh/thành
@@ -138,14 +172,26 @@ const FootballPitchCreate = () => {
                                     </svg>
                                 </div>
                                 <div className={cx("item__select")}>
-                                    <select defaultValue="0" onChange={handleChangeDistrict}>
+                                    <select
+                                        value={footballPitch.id_quanhuyen || 0}
+                                        onChange={(e) => {
+                                            handleInput(e);
+                                            handleChangeDistrict(e);
+                                        }}
+                                        name="id_quanhuyen"
+                                    >
                                         <option value="0" disabled>
                                             Chọn quận/huyện
                                         </option>
 
                                         {districts.map((district, index) => {
                                             return (
-                                                <option value= {district.id_quanhuyen} key={index}>
+                                                <option
+                                                    value={
+                                                        district.id_quanhuyen
+                                                    }
+                                                    key={index}
+                                                >
                                                     {district.tenquanhuyen}
                                                 </option>
                                             );
@@ -163,20 +209,23 @@ const FootballPitchCreate = () => {
                                 <div className={cx("item__select")}>
                                     <select
                                         onChange={handleInput}
+                                        value={footballPitch.id_xaphuong || 0}
                                         name="id_xaphuong"
-                                        defaultValue="0"
                                     >
                                         <option value="0">
                                             Chọn xã/phường
                                         </option>
-                                        
-                                        {
-                                            wards.map((ward, index) => {
-                                                return(
-                                                    <option value={ward.id_xaphuong} key={index}>{ward.tenxaphuong}</option>
-                                                )
-                                            })
-                                        }
+
+                                        {wards.map((ward, index) => {
+                                            return (
+                                                <option
+                                                    value={ward.id_xaphuong}
+                                                    key={index}
+                                                >
+                                                    {ward.tenxaphuong}
+                                                </option>
+                                            );
+                                        })}
                                     </select>
                                     <svg>
                                         <use xlinkHref="#select-arrow-down"></use>
@@ -193,6 +242,7 @@ const FootballPitchCreate = () => {
                                         type="text"
                                         placeholder="Nhập địa chỉ cụ thể"
                                         onChange={handleInput}
+                                        value={footballPitch.diachicuthe}
                                         name="diachicuthe"
                                     />
                                 </div>
@@ -202,16 +252,39 @@ const FootballPitchCreate = () => {
                             <p>Sân:</p>
                             <div className={cx("pitches__wrapper")}>
                                 <div className={cx("pitches__box")}>
-                                    {data.pitches.map((item, index) => {
-                                        return (
-                                            <Pitch key={index} data={item} />
-                                        );
-                                    })}
+                                    {dataFootballPitch.pitches.map(
+                                        (item, index) => {
+                                            return (
+                                                <Pitch
+                                                    key={index}
+                                                    data={item}
+                                                />
+                                            );
+                                        }
+                                    )}
                                 </div>
                                 <div className={cx("add__box")}>
                                     <p
                                         className={cx("btn__editpitch")}
-                                        onClick={() => navigate("pitches")}
+                                        onClick={() => {
+                                            dispatch(
+                                                createNewFootballPich({
+                                                    footballName:
+                                                        footballPitch.tensanbong,
+                                                    idWard: footballPitch.id_xaphuong,
+                                                    idDistrict:
+                                                        footballPitch.id_quanhuyen,
+                                                    idProvince:
+                                                        footballPitch.id_tinhthanh,
+                                                    addressDetail:
+                                                        footballPitch.diachicuthe,
+                                                    description:
+                                                        footballPitch.gioithieu,
+                                                    pitches: [],
+                                                })
+                                            );
+                                            navigate("pitches");
+                                        }}
                                     >
                                         Chỉnh sửa
                                     </p>
@@ -249,6 +322,7 @@ const FootballPitchCreate = () => {
                                 className={cx("description--content")}
                                 onChange={handleInput}
                                 name="gioithieu"
+                                value={footballPitch.gioithieu}
                             />
                         </div>
                     </div>
@@ -256,7 +330,20 @@ const FootballPitchCreate = () => {
                         <div className={cx("booking__box")}>
                             <button
                                 className={cx("btn__booking")}
-                                onClick={() => navigate("..")}
+                                onClick={() => {
+                                    dispatch(
+                                        createNewFootballPich({
+                                            footballName: "",
+                                            idWard: null,
+                                            idDistrict: null,
+                                            idProvince: null,
+                                            addressDetail: "",
+                                            description: "",
+                                            pitches: [],
+                                        })
+                                    );
+                                    navigate("..");
+                                }}
                             >
                                 Tạo
                             </button>

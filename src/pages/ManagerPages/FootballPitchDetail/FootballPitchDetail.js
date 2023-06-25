@@ -21,7 +21,7 @@ const FootballPtiches = () => {
 
     return (
         <div className={cx("pitch__wrapper")}>
-            <div className={cx("title__box")}>
+            <div className={cx("title__box")} onClick={() => navigate(-1)}>
                 <FontAwesomeIcon icon={faCaretLeft} size="2x" />
                 <h3 className={cx("title")}>Chi tiết sân bóng</h3>
             </div>

@@ -264,6 +264,17 @@ class QuanLyDatSan {
             return Promise.reject(error);
         }
     };
+
+    static getManagetFootballPitch = async (idAccount) => {
+        try {
+            const res = await axios.get(
+                "http://localhost:8800/manager-football-pitch/" + idAccount);
+            return res.data;
+        } catch (error) {
+            console.log(error);
+            return Promise.reject(error);
+        }
+    };
 }
 
 export default QuanLyDatSan;

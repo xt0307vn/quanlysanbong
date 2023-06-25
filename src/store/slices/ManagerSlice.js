@@ -5,6 +5,8 @@ const ManagerSlice = createSlice({
     initialState: {
         footballName: "",
         idWard: null,
+        idDistrict: null,
+        idProvince: null,
         addressDetail: "",
         description: "",
         pitches: []
@@ -13,6 +15,8 @@ const ManagerSlice = createSlice({
         createNewFootballPich: (state, action) => {
             state.footballName = action.payload.footballName
             state.idWard = action.payload.idWard
+            state.idDistrict = action.payload.idDistrict
+            state.idProvince = action.payload.idProvince
             state.addressDetail = action.payload.addressDetail
             state.description = action.payload.description
         },

@@ -1,0 +1,19 @@
+
+.pitch__overview {
+    min-width: 250px;
+    height: 150px;
+    position: relative;
+}
+
+.pitch__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.pitch__quickview {
+    position: absolute;
+    bottom: 0;
+    padding: 0 10px 10px 10px;
+}
