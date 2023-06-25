@@ -6,10 +6,12 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Profile.module.scss";
 import apis from "../../common/apis";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const cx = classNames.bind(styles);
 const Profile = () => {
     const navigate = useNavigate();
+    const idAccount = useSelector(state => state.account.idAccount)
     const [account, setAccount] = useState({})
 
 
@@ -19,7 +21,7 @@ const Profile = () => {
     };
 
     useEffect(() => {
-        apis.getAccount(localStorage.getItem("idAccount")).then((data) =>
+        apis.getAccount(idAccount).then((data) =>
             setAccount(data)
         );
     }, []);

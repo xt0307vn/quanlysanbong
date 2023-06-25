@@ -10,9 +10,11 @@ import { useEffect, useState } from "react";
 
 import styles from "./ProfileUpdate.module.scss";
 import apis from "../../common/apis";
+import { useSelector } from "react-redux";
 
 const cx = classNames.bind(styles);
 const ProfileUpdate = () => {
+    const idAccount = useSelector((state) => state.account.idAccount);
     const [account, setAccount] = useState({
         matkhau: "",
         email: "",
@@ -46,7 +48,7 @@ const ProfileUpdate = () => {
     let listyear = [];
     let listmonth = [];
     const handleUpdate = () => {
-        apis.updateAccount(parseInt(localStorage.getItem("idAccount")), {
+        apis.updateAccount(idAccount, {
             tentaikhoan: account.tentaikhoan,
             matkhau: account.matkhau,
             email: account.email,
@@ -112,7 +114,7 @@ const ProfileUpdate = () => {
     }
 
     useEffect(() => {
-        apis.getAccount(localStorage.getItem("idAccount")).then((data) => {
+        apis.getAccount(idAccount).then((data) => {
             setAccount(data);
             apis.getDistrict(data.id_tinhthanh).then((data) =>
                 setDistricts(data)
